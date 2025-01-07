@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <p>
-          <strong>Event App</strong> by <a href="https://example.com">Your Name</a>.
+          <strong>Event App</strong> by <a href="https://github.com/ertnbrk/HBO" style="color: aliceblue;">Ertan Felek --- Melike Hacıbekiroğlu</a>.
         </p>
       
     </div>

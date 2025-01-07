@@ -2,49 +2,50 @@
     <div :class="['container', { 'right-panel-active': isSignUp }]" id="container">
       <div class="form-container sign-up-container">
         <form @submit.prevent="signupUser">
-          <h1>Create Account</h1>
+          <h1>Hesap Oluştur</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
-          <span>or use your email for registration</span>
           <input v-model="signup.name" type="text" placeholder="Name" />
           <input v-model="signup.email" type="email" placeholder="Email" />
           <input v-model="signup.password" type="password" placeholder="Password" />
-          <button type="submit">Sign Up</button>
+          <button type="submit">Kayıt Ol</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
         <form @submit.prevent="signinUser">
-          <h1>Sign in</h1>
+          <h1>Giriş yap</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
-          <span>or use your account</span>
+          <br>
           <input v-model="signin.email" type="email" placeholder="Email" />
           <input v-model="signin.password" type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button type="submit">Sign In</button>
+          <a href="#">Şifremi unuttum</a>
+          <button type="submit">Giriş Yap</button>
         </form>
       </div>
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button class="ghost" @click="toggleForm">Sign In</button>
+            <h1>Aramıza hoşgeldin</h1>
+            <p>Hesabını oluştur ve etkinlik takvimini düzenlemeye başla</p>
+            <button class="ghost" @click="toggleForm">Giriş Yap</button>
           </div>
           <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start your journey with us</p>
-            <button class="ghost" @click="toggleForm">Sign Up</button>
+            <h1>Hoşgeldin!</h1>
+            <p>Etkinliklerini takip etmek için giriş yap</p>
+            <button class="ghost" @click="toggleForm">Kayıt Ol</button>
           </div>
         </div>
       </div>
     </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </template>
   
   <script>
@@ -67,10 +68,14 @@
       signupUser() {
         // Handle user signup logic
         console.log('User signed up:', this.signup);
+        this.$router.push('/home'); // Örneğin kullanıcıyı /dashboard sayfasına yönlendiriyoruz
+
       },
       signinUser() {
         // Handle user signin logic
         console.log('User signed in:', this.signin);
+        this.$router.push('/home'); // Örneğin kullanıcıyı /home sayfasına yönlendiriyoruz
+
       },
       toggleForm() {
         // Toggle the form view between sign-in and sign-up

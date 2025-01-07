@@ -6,13 +6,13 @@ import CreateEvent from '../components/EventForm'; // Yeni bileşeni içe aktar
 import EventList from '@/components/EventList.vue';
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomePage,
     meta: { hideNavbar: false, hideFooter: false }, // Navbar ve footer görünür
   },
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: LoginPage,
     meta: { hideNavbar: true, hideFooter: true }, // Navbar ve footer gizli
